@@ -72,4 +72,4 @@ class Card:
                 if rect.collidepoint(pos) and (col, row) not in self.clicked_cells:
                     if card_numbers[col][row] in announced_number:
                         self.clicked_cells.add((col, row))
-                        
+                        self.sound.play()
