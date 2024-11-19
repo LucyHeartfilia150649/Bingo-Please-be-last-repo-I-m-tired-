@@ -7,7 +7,6 @@ class Bot:
         self.card = Card()
         self.y_offset = y_offset
         self.has_bingo = False
-
     def mark_automatically(self, announced_number):
         for col in range(size_card):
             for row in range(size_card):
@@ -23,15 +22,8 @@ class Bot:
             for row in range(size_card):
                 x = (screen_width // 4 - (5 * bot_size_block) // 2 + col * bot_size_block)-100 
                 y = self.y_offset + row * bot_size_block
-                if col == 0 and row == 4:
-                    pygame.draw.rect(screen, orange, (x, y, bot_size_block, bot_size_block),border_bottom_left_radius=20)
-                    pygame.draw.rect(screen, navy_blue, (x, y, bot_size_block, bot_size_block),1,border_bottom_left_radius=20)
-                elif col == 4 and row == 4:
-                    pygame.draw.rect(screen, orange, (x, y, bot_size_block, bot_size_block),border_bottom_right_radius=20)
-                    pygame.draw.rect(screen, navy_blue, (x, y, bot_size_block, bot_size_block),1,border_bottom_right_radius=20)
-                else:
-                    pygame.draw.rect(screen, orange, (x, y, bot_size_block, bot_size_block))
-                    pygame.draw.rect(screen, navy_blue, (x, y, bot_size_block, bot_size_block),1)
+                pygame.draw.rect(screen, orange, (x, y, bot_size_block, bot_size_block))
+                pygame.draw.rect(screen, navy_blue, (x, y, bot_size_block, bot_size_block),1)
                 
                 if (col, row) in self.card.clicked_cells:
                     if self.name == 'octopus':
