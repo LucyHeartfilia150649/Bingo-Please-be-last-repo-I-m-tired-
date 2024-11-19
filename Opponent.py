@@ -55,6 +55,12 @@ class Bot:
                             y + bot_size_block // 2 - number_text.get_height() // 2,
                         ),
                     )
+                if self.name == "octopus":
+                    screen.blit(octopus2, (290, 200))
+                elif self.name == "seahorse":
+                    screen.blit(seahorse2, (115, 400))
+                else:
+                    screen.blit(crab2, (285, 600))
 
     def draw_for_winner(self, screen):
         for col in range(size_card):
@@ -78,12 +84,6 @@ class Bot:
                         y + size_block // 2 - number_text.get_height() // 2,
                     ),
                 )
-                if self.name == "octopus":
-                    screen.blit(octopus2, (290, 200))
-                elif self.name == "seahorse":
-                    screen.blit(seahorse2, (115, 400))
-                else:
-                    screen.blit(crab2, (285, 600))
                 if (col, row) in self.card.clicked_cells:
                     if self.name == "octopus":
                         screen.blit(bot_mark_winner("octopus_mark"), (x, y))

@@ -43,9 +43,8 @@ pause_screen = pygame.transform.scale(
 turtle = pygame.image.load("picture/turtle.png")
 cloral = pygame.image.load("picture/cloral.png")
 g_of_fish = pygame.image.load("picture/g_of_fish.png")
-sad_octopus = pygame.image.load("picture/sad_octopus.png")
-sad_shark = pygame.image.load("picture/sad_shark.png")
-sad_starfish = pygame.image.load("picture/sad_starfish.png")
+sad_octopus = pygame.transform.scale(pygame.image.load("picture/sad_octopus.png"),(278,350))
+sad_shark = pygame.transform.scale(pygame.image.load("picture/sad_shark.png"),(378,250))
 
 
 def bot_mark(mark):
