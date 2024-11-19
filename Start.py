@@ -40,6 +40,9 @@ shark2 = pygame.transform.scale(pygame.image.load("picture/shark2.png"), (250, 2
 pause_screen = pygame.transform.scale(
     pygame.image.load("picture/pause.png"), (690, 490)
 )
+turtle = pygame.image.load("picture/turtle.png")
+cloral = pygame.image.load("picture/cloral.png")
+g_of_fish = pygame.image.load("picture/g_of_fish.png")
 
 
 def bot_mark(mark):
@@ -47,8 +50,10 @@ def bot_mark(mark):
         pygame.image.load("picture/" + mark + ".png"), (30, 30)
     )
 
+
 def bot_mark_winner(mark):
     return pygame.image.load("picture/" + mark + ".png")
+
 
 def bot_banner(banner):
     return pygame.transform.scale(
