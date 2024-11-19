@@ -21,7 +21,7 @@ class Card:
         for row in range(size_card): #check row
             count_row = 0  
             for column in range(size_card):
-                if (column, row) in clicked_cells: #use clicked_cells because the action is in it
+                if (column, row) in clicked_cells: #use clicked_cells because it store position of mark like((0,0),(1,0))
                     count_row += 1  
             if count_row == 5:
                 return True
@@ -40,7 +40,6 @@ class Card:
             return True
         if ((0,0) in clicked_cells) and ((0,4) in clicked_cells) and ((2,2) in clicked_cells) and ((4,0) in clicked_cells) and ((4,4) in clicked_cells):
             return True
-        
         return False
 
     def draw_grid(self, click_cells): # create table . if the table is error , fix this function 
