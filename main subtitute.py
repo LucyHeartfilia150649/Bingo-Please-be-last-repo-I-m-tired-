@@ -231,8 +231,8 @@ class BingoGame:
                         pygame.quit()
                         sys.exit()
             screen.blit(blue_screen, (0, 0))
-            screen.blit(sad_octopus,(30,400))
-            screen.blit(sad_shark,(900,200))
+            screen.blit(sad_octopus, (30, 400))
+            screen.blit(sad_shark, (900, 200))
             screen.blit(
                 game_over_text,
                 (
@@ -280,6 +280,10 @@ class BingoGame:
                                 screen_height // 2 - BINGO.get_height() // 2,
                             ),
                         )
+                        screen.blit(shark3, (50, 50))
+                        screen.blit(octopus3, (100, 500))
+                        screen.blit(g_of_fish,(900,100))
+                        screen.blit(cloral,(1020,450))
                         pygame.display.update()
                         if sound_check == True:
                             sound1.play()
