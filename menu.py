@@ -6,7 +6,7 @@ class Menu:
     def __init__(self):
         pass
 
-    def draw(self):
+    def draw(self): #วาดหน้าเมนูขึ้นมา ตอนเรียกใช้งาน
         title = font(100).render("BinGo Go!", True, yellow)
         plays = Button(
             yellow_button,
@@ -28,14 +28,14 @@ class Menu:
             light_blue,
             0.5,
         )
-        while True:
+        while True: #เช็คเงื่อนไขว่าทำอะไรบ้าง
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
-                    if plays.checkForInput(mouse):
+                    if plays.checkForInput(mouse): #ถ้ากด play จะออกจากลูปไปหน้าเลือกโหมด
                         return False
                     elif exits.checkForInput(mouse):
                         pygame.quit()
@@ -58,7 +58,7 @@ class Menu:
             exits.update(screen)
             pygame.display.update()
 
-    def option_draw(self):
+    def option_draw(self): #วาดปุ่มเลือกโหมด
         select_option = font(100).render("Select Game Mode", True, yellow)
         enemy_game = Button(
             yellow_button,
@@ -80,14 +80,14 @@ class Menu:
             light_blue,
             0.5,
         )
-        while True:
+        while True: #เช็คว่าเลือกโหมดไหน
             mouse = pygame.mouse.get_pos()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
-                    if enemy_game.checkForInput(mouse):
+                    if enemy_game.checkForInput(mouse): #ออกจากลูป while
                         return 0
                     elif solo.checkForInput(mouse):
                         return 1
