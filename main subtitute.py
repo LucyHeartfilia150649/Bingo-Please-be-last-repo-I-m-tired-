@@ -66,9 +66,9 @@ class BingoGame:
                         if self.pause():
                             return
                     card.mark_number(
-                        event.pos, announced_number, card.card_numbers
+                        position_mouse, announced_number, card.card_numbers
                     )  # ใส่ตัว Mark ตารางของตัวเอง
-                    # event.pos = ตำแหน่งเมาส์ ,announced_number = เก็บตัวเลขที่ควร mark ,card.card_numbers = เช็คเลขในตารางตรงกับ announced_number ไหม
+                    # position_mouse = ตำแหน่งเมาส์ ,announced_number = เก็บตัวเลขที่ควร mark ,card.card_numbers = เช็คเลขในตารางตรงกับ announced_number ไหม
             screen.blit(blue_screen, (0, 0))
             card.draw_grid(
                 card.clicked_cells
@@ -116,8 +116,10 @@ class BingoGame:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if paused.checkForInput(position_mouse):
-                        if self.pause():
+                        paused_time_pass = self.pause()
+                        if paused_time_pass[0]:
                             return
+                        start_time += paused_time_pass[1]
                     card.mark_number(event.pos, announced_number, card.card_numbers)
             screen.blit(blue_screen, (0, 0))
             card.draw_grid(card.clicked_cells)
@@ -172,7 +174,7 @@ class BingoGame:
             light_blue,
             0.25,
         )
-        times = time.time()
+        paused_times = time.time()
 
         while True:
             mouse = pygame.mouse.get_pos()
@@ -182,13 +184,13 @@ class BingoGame:
                     sys.exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if resume.checkForInput(mouse):
-                        return
+                        return [None, time.time() - paused_times]
                     elif menu.checkForInput(mouse):
-                        return True
+                        return [True]
 
-                if time.time() - times > 0.5 and event.type == pygame.KEYDOWN:
+                if time.time() - paused_times > 0.5 and event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_p:
-                        return
+                        return [None, time.time() - paused_times]
 
             screen.blit(game_background, (0, 0))
             menu_box = pygame.Rect(300, 150, 700, 500)  # ทำให้กล่อง menu เป็นสี่เหลี่ยม
