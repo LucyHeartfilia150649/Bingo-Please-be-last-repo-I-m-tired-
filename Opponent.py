@@ -87,7 +87,10 @@ class Bot:
                 if (col, row) in self.card.clicked_cells:
                     if self.name == "octopus":
                         screen.blit(bot_mark_winner("octopus_mark"), (x, y))
+                        screen.blit(happy_octopus, (10, 200))
                     elif self.name == "seahorse":
                         screen.blit(bot_mark_winner("seahorse_mark"), (x, y))
+                        screen.blit(happy_seahorse, (70, 200))
                     else:
                         screen.blit(bot_mark_winner("crab_mark"), (x, y))
+                        screen.blit(happy_crab, (91, 200))

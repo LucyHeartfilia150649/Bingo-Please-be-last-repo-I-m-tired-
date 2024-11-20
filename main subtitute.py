@@ -231,8 +231,6 @@ class BingoGame:
                         pygame.quit()
                         sys.exit()
             screen.blit(blue_screen, (0, 0))
-            screen.blit(sad_octopus, (30, 400))
-            screen.blit(sad_shark, (900, 200))
             screen.blit(
                 game_over_text,
                 (

@@ -16,7 +16,7 @@ screen_height = 720
 size_block = 80
 bot_size_block = 30
 size_card = 5
-announce_time = 2
+announce_time = 3
 range_number = 50
 # img
 blue_screen = pygame.image.load("picture/background.png")
@@ -45,8 +45,10 @@ pause_screen = pygame.transform.scale(
 turtle = pygame.image.load("picture/turtle.png")
 cloral = pygame.transform.scale(pygame.image.load("picture/cloral.png"),(300,300))
 g_of_fish = pygame.transform.scale(pygame.image.load("picture/g_of_fish.png"),(300,300))
-sad_octopus = pygame.transform.scale(pygame.image.load("picture/sad_octopus.png"),(278,350))
-sad_shark = pygame.transform.scale(pygame.image.load("picture/sad_shark.png"),(378,250))
+happy_crab = pygame.transform.scale(pygame.image.load("picture/happy_crab.png"),(300,300))
+happy_octopus = pygame.transform.scale(pygame.image.load("picture/happy_octopus.png"),(300,300))
+happy_seahorse = pygame.transform.scale(pygame.image.load("picture/happy_seahorse.png"),(300,300))
+
 
 
 def bot_mark(mark):
